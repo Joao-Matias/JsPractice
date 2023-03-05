@@ -21,3 +21,55 @@ const eldest = sortedByAge[sortedByAge.length - 1];
 
 console.log(youngest);
 console.log(eldest);
+
+// function takes array and id. On the array - id, task, done.  id-number, task- string , done -bulleon
+
+/* function that takes an array of items and an ID, 
+The array of items has the following shape:
+
+const array = [
+    {id: 'dfdafdf', task: 'Task 1', done: false},
+    {id: 'dfdafde', task: 'Task 2', done: false},
+    {id: 'dfdafdy', task: 'Task 3', done: false},
+]
+
+i.e. toggle(array, 'dfdafde')
+
+expected: 
+[
+    {id: 'dfdafdf', task: 'Task 1', done: false},
+    {id: 'dfdafde', task: 'Task 2', done: true},
+    {id: 'dfdafdy', task: 'Task 3', done: false},
+]
+
+*/
+// const array = [
+//     {id: 'dfdafdf', task: 'Task 1', done: false},
+//     {id: 'dfdafde', task: 'Task 2', done: false},
+//     {id: 'dfdafdy', task: 'Task 3', done: false},
+// ];
+
+// array.id
+
+const toggle = function (array, id) {
+  let newArray = array.map((value) => {
+    if (value.id === id) {
+      return { ...value, done: !value.done };
+    } else {
+      return value;
+    }
+  });
+
+  return newArray;
+};
+
+console.log(
+  toggle(
+    [
+      { id: 1, task: "Task 1", done: false },
+      { id: 2, task: "Task 2", done: false },
+      { id: 3, task: "Task 3", done: false },
+    ],
+    2
+  )
+);
