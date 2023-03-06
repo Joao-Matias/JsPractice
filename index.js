@@ -100,13 +100,20 @@ const removeTask = function (array, id) {
   return array.filter((value) => value.id !== id);
 };
 
+const addTask = function (tasksArray, newTask) {
+  return [
+    { id: Math.trunc(Math.random() * 100), task: newTask, done: false },
+    ...tasksArray,
+  ];
+};
+
 console.log(
-  removeTask(
+  addTask(
     [
       { id: 1, task: "Task 1", done: false },
       { id: 2, task: "Task 2", done: false },
       { id: 3, task: "Task 3", done: false },
     ],
-    2
+    "Task 4"
   )
 );
