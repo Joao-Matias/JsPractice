@@ -100,20 +100,19 @@ const removeTask = function (array, id) {
   return array.filter((value) => value.id !== id);
 };
 
-const addTask = function (tasksArray, newTask) {
+// created at and due to. dates
+const addTask = function (tasksArray, newTask, dueDate) {
   return [
-    { id: Math.trunc(Math.random() * 100), task: newTask, done: false },
+    {
+      id: Math.trunc(Math.random() * 100),
+      task: newTask,
+      done: false,
+      createdAt: new Date(), // Date.now()
+      dueDate,
+    },
     ...tasksArray,
   ];
 };
 
-console.log(
-  addTask(
-    [
-      { id: 1, task: "Task 1", done: false },
-      { id: 2, task: "Task 2", done: false },
-      { id: 3, task: "Task 3", done: false },
-    ],
-    "Task 4"
-  )
-);
+console.log(addTask([], "Task 4"));
+console.log(addTask([], "Task 4", new Date()));
