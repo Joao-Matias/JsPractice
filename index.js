@@ -95,3 +95,18 @@ console.log(
     "New Task"
   )
 );
+
+const removeTask = function (array, id) {
+  return array.filter((value) => value.id !== id);
+};
+
+console.log(
+  removeTask(
+    [
+      { id: 1, task: "Task 1", done: false },
+      { id: 2, task: "Task 2", done: false },
+      { id: 3, task: "Task 3", done: false },
+    ],
+    2
+  )
+);
