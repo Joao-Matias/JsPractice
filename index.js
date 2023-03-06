@@ -73,3 +73,25 @@ console.log(
     2
   )
 );
+
+const updateTask = function (taskList, id, taskText) {
+  return taskList.map((value) => {
+    if (value.id === id) {
+      return { ...value, task: taskText };
+    } else {
+      return value;
+    }
+  });
+};
+
+console.log(
+  updateTask(
+    [
+      { id: 1, task: "Task 1", done: false },
+      { id: 2, task: "Task 2", done: false },
+      { id: 3, task: "Task 3", done: false },
+    ],
+    2,
+    "New Task"
+  )
+);
